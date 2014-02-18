@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Example 3">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Example 3</title>
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="author" href="humans.txt">
+    </head>
+    <body ng-app="ejemplo">
+    	<div class="container">
+    		<div id="main" ng-controller="bienvenida">
+	        	<h1>Welcome</h1>
+	        	<input type="text" ng-model="texto" />
+	        	<p>{{ texto }}</p>
+	        </div>
+	        <div id="second" ng-controller="usuarios">
+	        	<button ng-click="getUsers($event)" class="btn btn-default">
+	        		Load users
+	        	</button>
+	        	<ul>
+	        		<li id="{{user.id}}" ng-repeat="user in usuarios | filter: texto" usuariotontito="{usr:user}"></li>
+	        	</ul>
+	        </div>
+    	</div>
+
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/webapp/App.class.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
